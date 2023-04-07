@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministrativePanelModule } from './administrative-panel/administrative-panel.module';
+import { AttendanceComponent } from './pages/attendance/attendance.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AttendanceComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     AdministrativePanelModule
   ],

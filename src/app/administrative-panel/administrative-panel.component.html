@@ -18,7 +18,7 @@
   <mat-drawer #drawer class="sidenav" mode="side">
     <!--SECCIONES-->
     <div class="dflex">
-      <button color="accent" class="my-10" mat-raised-button>
+      <button color="accent" (click)="navigate()" class="my-10" mat-raised-button>
         Listado de Alumnos
       </button>
       <button color="accent" class="my-10" mat-raised-button>
@@ -32,5 +32,5 @@
       </button>
     </div>
   </mat-drawer>
-  <app-students></app-students>
+  <router-outlet></router-outlet>
 </mat-drawer-container>

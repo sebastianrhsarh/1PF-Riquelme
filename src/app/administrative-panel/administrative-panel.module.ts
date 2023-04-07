@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { StudentsComponent } from '../pages/students/students.component';
 import { MatTableModule } from '@angular/material/table';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -21,7 +22,8 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    AppRoutingModule
   ],
   exports: [
     AdministrativePanelComponent,

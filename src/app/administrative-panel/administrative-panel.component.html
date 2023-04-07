@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  <!--TOOLBAR-->
+  <button mat-icon-button class="icon" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Panel Administrativo</span>
+  <span class="spacer"></span>
+  <button mat-icon-button class="icon favorite-icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container class="container" autosize>
+<!--MENÚ LATERAL-->
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <!--SECCIONES-->
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <div class="dflex">
+      <button color="accent" class="my-10" (click)="showFiller = !showFiller" mat-raised-button>
+        Listado de Alumnos
+      </button>
+      <button color="accent" class="my-10" (click)="showFiller = !showFiller" mat-raised-button>
+        Asistencia
+      </button>
+      <button color="accent" class="my-10" (click)="showFiller = !showFiller" mat-raised-button>
+        Acciones
+      </button>
+      <button color="accent" class="my-10" (click)="showFiller = !showFiller" mat-raised-button>
+        Configuración
+      </button>
+    </div>
+  </mat-drawer>
+
+</mat-drawer-container>

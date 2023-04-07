@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdministrativePanelComponent } from './administrative-panel/administrative-panel.component';
+import { AdministrativePanelModule } from './administrative-panel/administrative-panel.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +13,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AdministrativePanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

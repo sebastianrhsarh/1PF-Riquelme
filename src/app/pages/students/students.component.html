@@ -3,7 +3,7 @@
   <!-- Name Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Nombre </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.name}}</td>
   </ng-container>
 
   <!-- Status Column -->
@@ -12,12 +12,19 @@
     <td mat-cell *matCellDef="let element"> {{element.status ? "APROBADO" : "REPROBADO"}} </td>
   </ng-container>
 
-  <!-- Action Column -->
-  <ng-container matColumnDef="action">
-    <th mat-header-cell *matHeaderCellDef> Acción </th>
+  <!-- Edit Column -->
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> Editar </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" (click)="edit(element)">Editar</button>
+    </td>
+  </ng-container>
+
+  <!-- Delete Column -->
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Borrar </th>
     <td mat-cell *matCellDef="let element">
       <button mat-raised-button color="primary" (click)="delete(element)">Eliminar</button>
-      <button mat-raised-button color="primary" (click)="edit(element)">Editar</button>
     </td>
   </ng-container>
 

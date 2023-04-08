@@ -11,7 +11,17 @@ export class AdministrativePanelComponent {
 
   constructor(private router: Router) {}
 
-  navigate() {
-    this.router.navigate(['/students'])
+  navigate(value:number) {
+    switch (value) {
+      case 1:
+        this.router.navigate(['/form']);
+        break;
+      case 2:
+        this.router.navigate(['/students']);
+        break;
+      default:
+        this.router.navigate(['/'])
+        break;
+    }
   }
 }

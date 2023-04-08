@@ -8,13 +8,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { StudentsComponent } from '../pages/students/students.component';
 import { MatTableModule } from '@angular/material/table';
 import { AppRoutingModule } from '../app-routing.module';
-
-
+import { FormComponent } from '../pages/form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AdministrativePanelComponent,
-    StudentsComponent
+    StudentsComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,
@@ -23,11 +28,17 @@ import { AppRoutingModule } from '../app-routing.module';
     MatIconModule,
     MatButtonModule,
     MatTableModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatCardModule,
     AppRoutingModule
   ],
   exports: [
     AdministrativePanelComponent,
-    StudentsComponent
+    StudentsComponent,
+    FormComponent
   ]
 })
 export class AdministrativePanelModule { }

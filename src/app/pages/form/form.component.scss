@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card {
+  margin: 20px 0;
+  background-color: #c2185b;
+  font-size: 20px;
+}

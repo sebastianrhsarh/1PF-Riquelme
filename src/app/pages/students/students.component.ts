@@ -7,7 +7,7 @@ import { ELEMENT_DATA } from 'src/app/constants/constant';
   styleUrls: ['./students.component.scss']
 })
 export class StudentsComponent {
-  displayedColumns: string[] = ['name', 'status', 'action'];
+  displayedColumns: string[] = ['name', 'status', 'edit', 'delete'];
   dataSource = ELEMENT_DATA;
   
   delete(element: any) {

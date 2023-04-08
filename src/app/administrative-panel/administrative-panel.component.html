@@ -5,8 +5,8 @@
   </button>
   <span>Panel Administrativo</span>
   <span class="spacer"></span>
-  <button mat-icon-button class="icon favorite-icon">
-    <mat-icon>home</mat-icon>
+  <button mat-icon-button (click)="navigate(0)" class="icon favorite-icon">
+    <mat-icon >home</mat-icon>
   </button>
   <button mat-icon-button class="icon">
     <mat-icon>person</mat-icon>
@@ -18,7 +18,10 @@
   <mat-drawer #drawer class="sidenav" mode="side">
     <!--SECCIONES-->
     <div class="dflex">
-      <button color="accent" (click)="navigate()" class="my-10" mat-raised-button>
+      <button color="accent" (click)="navigate(1)" class="my-10" mat-raised-button>
+        Formulario de Registro
+      </button>
+      <button color="accent" (click)="navigate(2)" class="my-10" mat-raised-button>
         Listado de Alumnos
       </button>
       <button color="accent" class="my-10" mat-raised-button>

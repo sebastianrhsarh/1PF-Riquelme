@@ -9,4 +9,22 @@ import { ELEMENT_DATA } from 'src/app/constants/constant';
 export class StudentsComponent {
   displayedColumns: string[] = ['name', 'status', 'action'];
   dataSource = ELEMENT_DATA;
+  
+  delete(element: any) {
+    const index = ELEMENT_DATA.indexOf(element);
+    if (index !== -1) {
+      ELEMENT_DATA.splice(index, 1);
+    }
+    this.dataSource = ELEMENT_DATA.slice(); // Asigna una copia actualizada de ELEMENT_DATA
+    return this.dataSource;
+  }
+
+  edit(element: any) {
+    const index = ELEMENT_DATA.indexOf(element);
+    if (index !== -1) {
+      ELEMENT_DATA[index]['name'] = "TEST"; // Actualiza la propiedad del objeto
+    }
+    this.dataSource = ELEMENT_DATA.slice(); // Asigna una copia actualizada de ELEMENT_DATA
+    return this.dataSource;
+  }
 }

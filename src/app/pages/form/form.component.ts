@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ELEMENT_DATA } from 'src/app/constants/constant';
 
 @Component({
   selector: 'app-form',
@@ -23,7 +24,14 @@ export class FormComponent {
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      console.log(this.registerForm.value);
+      const { name, lastName } = this.registerForm.value;
+      const newFormat = {
+        name,
+        lastName,
+        status: false
+      }
+      ELEMENT_DATA.push(newFormat);
+      alert('Estudiante registrado correctamente')
     } else {
       alert('El formulario no es valido');
     }

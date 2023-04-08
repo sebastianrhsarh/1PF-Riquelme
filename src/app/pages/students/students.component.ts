@@ -23,16 +23,16 @@ export class StudentsComponent {
     return this.dataSource;
   }
 
-  edit(element: any) {
-    const index = ELEMENT_DATA.indexOf(element);
-    if (index !== -1) {
-      ELEMENT_DATA[index]['name'] = "TEST"; // Actualiza la propiedad del objeto
-    }
-    this.dataSource = ELEMENT_DATA.slice(); // Asigna una copia actualizada de ELEMENT_DATA
-    return this.dataSource;
-  }
+  // edit(element: any) {
+  //   const index = ELEMENT_DATA.indexOf(element);
+  //   if (index !== -1) {
+  //     ELEMENT_DATA[index]['name'] = "TEST"; // Actualiza la propiedad del objeto
+  //   }
+  //   this.dataSource = ELEMENT_DATA.slice(); // Asigna una copia actualizada de ELEMENT_DATA
+  //   return this.dataSource;
+  // }
 
-  dialogEditStudent(): void {
+  dialogEditStudent(element: any): void {
     this.dialogService.open(EditStudentComponent);
   }
 }

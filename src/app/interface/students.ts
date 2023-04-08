@@ -1,6 +1,5 @@
-export interface PeriodicElement {
+export interface formatStudent {
   name: string;
   lastName: string;
   status: boolean;
-  action: string;
 }

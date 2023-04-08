@@ -14,12 +14,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { EditStudentComponent } from '../pages/edit-student/edit-student.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AdministrativePanelComponent,
     StudentsComponent,
-    FormComponent
+    FormComponent,
+    EditStudentComponent
   ],
   imports: [
     CommonModule,
@@ -33,12 +36,14 @@ import { MatCardModule } from '@angular/material/card';
     MatSelectModule,
     MatInputModule,
     MatCardModule,
+    MatDialogModule,
     AppRoutingModule
   ],
   exports: [
     AdministrativePanelComponent,
     StudentsComponent,
-    FormComponent
+    FormComponent,
+    EditStudentComponent
   ]
 })
 export class AdministrativePanelModule { }

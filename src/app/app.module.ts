@@ -5,12 +5,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministrativePanelModule } from './administrative-panel/administrative-panel.module';
 import { AttendanceComponent } from './pages/attendance/attendance.component';
-import { FormComponent } from './pages/form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AttendanceComponent,
+    AttendanceComponent
   ],
   imports: [
     BrowserModule,

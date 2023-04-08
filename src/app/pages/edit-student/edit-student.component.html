@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Editar estudiante</h1>
+<form (ngSubmit)="onSubmit()"
+[formGroup]="registerForm"
+class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput [formControl]="nameControl"
+    type="text"
+    placeholder="Mínimo 6 caracteres."
+    [ngClass]="{ 'form-invalid': this.nameControl.invalid && this.nameControl.touched }">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input matInput [formControl]="lastNameControl"
+    type="text"
+    placeholder="Mínimo 6 caracteres."
+    [ngClass]="{ 'form-invalid': this.lastNameControl.invalid && this.lastNameControl.touched }">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Estado</mat-label>
+    <mat-select matNativeControl 
+    [formControl]="statusControl"
+    [ngClass]="{ 'form-invalid': this.statusControl.invalid && this.statusControl.touched }"
+    >
+      <mat-option value="approved">APROBADO</mat-option>
+      <mat-option value="reprobate">REPROBADO</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  selector: 'app-edit-student',
+  templateUrl: './edit-student.component.html',
+  styleUrls: ['./edit-student.component.scss']
 })
-export class FormComponent {
-  nameControl = new FormControl('',[Validators.required, Validators.minLength(5),Validators.pattern(/^[a-zA-Z]+$/)]);
-  lastNameControl = new FormControl('',[Validators.required, Validators.minLength(5),Validators.pattern(/^[a-zA-Z]+$/)]);
+export class EditStudentComponent {
+  nameControl = new FormControl('',[Validators.minLength(5),Validators.pattern(/^[a-zA-Z]+$/)]);
+  lastNameControl = new FormControl('',[Validators.minLength(5),Validators.pattern(/^[a-zA-Z]+$/)]);
+  statusControl = new FormControl('',[]);
 
   registerForm: FormGroup;
 
@@ -29,4 +30,3 @@ export class FormComponent {
     }
   }
 }
-

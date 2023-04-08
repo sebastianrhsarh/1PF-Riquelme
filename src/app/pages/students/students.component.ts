@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ELEMENT_DATA } from 'src/app/constants/constant';
+import { EditStudentComponent } from '../edit-student/edit-student.component';
 
 @Component({
   selector: 'app-students',
@@ -9,6 +11,8 @@ import { ELEMENT_DATA } from 'src/app/constants/constant';
 export class StudentsComponent {
   displayedColumns: string[] = ['name', 'status', 'edit', 'delete'];
   dataSource = ELEMENT_DATA;
+
+  constructor(private dialogService: MatDialog) {}
   
   delete(element: any) {
     const index = ELEMENT_DATA.indexOf(element);
@@ -26,5 +30,9 @@ export class StudentsComponent {
     }
     this.dataSource = ELEMENT_DATA.slice(); // Asigna una copia actualizada de ELEMENT_DATA
     return this.dataSource;
+  }
+
+  dialogEditStudent(): void {
+    this.dialogService.open(EditStudentComponent);
   }
 }

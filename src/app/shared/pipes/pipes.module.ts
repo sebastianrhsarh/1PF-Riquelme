@@ -10,6 +10,9 @@ import { FullNamePipe } from './full-name.pipe';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    FullNamePipe
   ]
 })
 export class PipesModule { }

@@ -16,6 +16,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { EditStudentComponent } from '../pages/edit-student/edit-student.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SharedModule } from '../shared/shared.module';
+import { PipesModule } from '../shared/pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FullNamePipe } from 'src/app/shared/pipes/full-name.pipe';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -8,7 +8,7 @@ import { FullNamePipe } from 'src/app/shared/pipes/full-name.pipe';
   declarations: [],
   imports: [
     CommonModule,
-    FullNamePipe
+    SharedModule
   ]
 })
 export class StudentsModule { }

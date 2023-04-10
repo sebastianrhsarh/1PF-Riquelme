@@ -8,8 +8,8 @@ import { ELEMENT_DATA } from 'src/app/constants/constant';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-  nameControl = new FormControl('',[Validators.required, Validators.minLength(5),Validators.pattern(/^[a-zA-Z]+$/)]);
-  lastNameControl = new FormControl('',[Validators.required, Validators.minLength(5),Validators.pattern(/^[a-zA-Z]+$/)]);
+  nameControl = new FormControl('',[Validators.required, Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
+  lastNameControl = new FormControl('',[Validators.required, Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
 
   registerForm: FormGroup;
 

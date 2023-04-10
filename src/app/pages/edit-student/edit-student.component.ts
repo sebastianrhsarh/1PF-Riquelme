@@ -11,8 +11,8 @@ import { ELEMENT_DATA } from 'src/app/constants/constant';
 export class EditStudentComponent {  
   dataEdit = JSON.parse(this.message);
 
-  nameControl = new FormControl(this.dataEdit.student.name,[Validators.minLength(5),Validators.pattern(/^[a-zA-Z]+$/)]);
-  lastNameControl = new FormControl(this.dataEdit.student.lastName,[Validators.minLength(5),Validators.pattern(/^[a-zA-Z]+$/)]);
+  nameControl = new FormControl(this.dataEdit.student.name,[Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
+  lastNameControl = new FormControl(this.dataEdit.student.lastName,[Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
   statusControl = new FormControl(this.dataEdit.student.status,[]);
   registerForm: FormGroup;
 

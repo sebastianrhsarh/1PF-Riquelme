@@ -8,14 +8,14 @@ class="container">
     <mat-label>Nombre</mat-label>
     <input matInput [formControl]="nameControl"
     type="text"
-    placeholder="Mínimo 6 caracteres."
+    placeholder="Mínimo 3 caracteres."
     [ngClass]="{ 'form-invalid': this.nameControl.invalid && this.nameControl.touched }">
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Apellido</mat-label>
     <input matInput [formControl]="lastNameControl"
     type="text"
-    placeholder="Mínimo 6 caracteres."
+    placeholder="Mínimo 3 caracteres."
     [ngClass]="{ 'form-invalid': this.lastNameControl.invalid && this.lastNameControl.touched }">
   </mat-form-field>
   <button color="accent" type="submit" mat-raised-button>

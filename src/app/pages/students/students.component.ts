@@ -33,6 +33,15 @@ export class StudentsComponent {
   // }
 
   dialogEditStudent(element: any): void {
-    this.dialogService.open(EditStudentComponent);
+    const datos = {
+      student: element,
+      listStudents: this.dataSource
+    }
+    const dialogRef = this.dialogService.open(EditStudentComponent, {
+      data: JSON.stringify(datos)
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.dataSource = result;
+    })
   }
 }

@@ -47,6 +47,9 @@ import { PipesModule } from '../shared/pipes/pipes.module';
     StudentsComponent,
     FormComponent,
     EditStudentComponent
+  ],
+  entryComponents: [
+    EditStudentComponent
   ]
 })
 export class AdministrativePanelModule { }

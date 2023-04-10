@@ -32,7 +32,9 @@ export class StudentsComponent {
       data: JSON.stringify(datos)
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.dataSource = result;
+      if(result) {
+        this.dataSource = result;
+      }
     })
   }
 }

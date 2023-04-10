@@ -13,7 +13,7 @@ export class EditStudentComponent {
 
   nameControl = new FormControl(this.dataEdit.student.name,[Validators.minLength(5),Validators.pattern(/^[a-zA-Z]+$/)]);
   lastNameControl = new FormControl(this.dataEdit.student.lastName,[Validators.minLength(5),Validators.pattern(/^[a-zA-Z]+$/)]);
-  statusControl = new FormControl(this.dataEdit.student.status ? 'approved' : 'reprobate',[]);
+  statusControl = new FormControl(this.dataEdit.student.status,[]);
   registerForm: FormGroup;
 
   constructor(public formBuilder: FormBuilder, private dialogRef: MatDialogRef<EditStudentComponent>, @Inject(MAT_DIALOG_DATA) public message:string) {

@@ -22,8 +22,8 @@ class="container">
     [formControl]="statusControl"
     [ngClass]="{ 'form-invalid': this.statusControl.invalid && this.statusControl.touched }"
     >
-      <mat-option value="approved">APROBADO</mat-option>
-      <mat-option value="reprobate">REPROBADO</mat-option>
+      <mat-option [value]="true">APROBADO</mat-option>
+      <mat-option [value]="false">REPROBADO</mat-option>
     </mat-select>
   </mat-form-field>
   <br>

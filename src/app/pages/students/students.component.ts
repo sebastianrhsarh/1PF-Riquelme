@@ -15,22 +15,13 @@ export class StudentsComponent {
   constructor(private dialogService: MatDialog) {}
   
   delete(element: any) {
-    const index = ELEMENT_DATA.indexOf(element);
+    const index = this.dataSource.indexOf(element);
     if (index !== -1) {
-      ELEMENT_DATA.splice(index, 1);
+      this.dataSource.splice(index, 1);
     }
-    this.dataSource = ELEMENT_DATA.slice(); // Asigna una copia actualizada de ELEMENT_DATA
+    this.dataSource = this.dataSource.slice();
     return this.dataSource;
   }
-
-  // edit(element: any) {
-  //   const index = ELEMENT_DATA.indexOf(element);
-  //   if (index !== -1) {
-  //     ELEMENT_DATA[index]['name'] = "TEST"; // Actualiza la propiedad del objeto
-  //   }
-  //   this.dataSource = ELEMENT_DATA.slice(); // Asigna una copia actualizada de ELEMENT_DATA
-  //   return this.dataSource;
-  // }
 
   dialogEditStudent(element: any): void {
     const datos = {

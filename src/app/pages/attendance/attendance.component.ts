@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ELEMENT_DATA } from 'src/app/constants/constant';
+import { Observable, map } from 'rxjs';
 import { formatStudent } from 'src/app/interface/students';
 import { GetStudentsService } from 'src/app/services/get-students.service';
 
@@ -12,11 +11,14 @@ import { GetStudentsService } from 'src/app/services/get-students.service';
 export class AttendanceComponent {
   students$: Observable<formatStudent[]>;
   displayedColumns: string[] = ['name', 'attendance'];
-  dataSource = ELEMENT_DATA
 
   constructor(private studentService: GetStudentsService) {
-    this.students$ = this.studentService.getStudents();
-    console.log("this.students$",this.students$);
+    this.students$ = this.studentService.getStudents().pipe(
+      map(students => students.map((student:any) => ({ 
+        name: student.name + ' ' + student.lastName,
+        attendance: student.attendance
+      })))
+    );
   }
   
 }

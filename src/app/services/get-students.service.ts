@@ -23,7 +23,7 @@ export class GetStudentsService {
       });
   }
 
-  getStudents(): Observable<formatStudent[]> {
+  getStudents(): Observable<any> {
     return this._students.asObservable();
   }
 

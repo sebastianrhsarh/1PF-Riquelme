@@ -8,8 +8,7 @@ import { AttendanceComponent } from './pages/attendance/attendance.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AttendanceComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

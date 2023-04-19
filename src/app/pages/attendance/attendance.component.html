@@ -1,3 +1,16 @@
-<ul>
-  <li *ngFor="let student of students$ | async">{{ student.name }}</li>
-</ul>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Asistencia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students$ | async">
+        <th>{{ student.name }} {{ student.lastName }}</th>
+        <td>{{ student.attendance }}%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

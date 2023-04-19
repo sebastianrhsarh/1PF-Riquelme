@@ -18,13 +18,15 @@ import { EditStudentComponent } from '../pages/edit-student/edit-student.compone
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from '../shared/shared.module';
 import { PipesModule } from '../shared/pipes/pipes.module';
+import { AttendanceComponent } from '../pages/attendance/attendance.component';
 
 @NgModule({
   declarations: [
     AdministrativePanelComponent,
     StudentsComponent,
     FormComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    AttendanceComponent
   ],
   imports: [
     CommonModule,

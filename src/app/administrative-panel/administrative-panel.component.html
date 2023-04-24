@@ -3,7 +3,7 @@
   <button mat-icon-button class="icon" (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span appFontSize>Panel Administrativo</span>
+  <span appFontSize>{{name}}</span>
   <span class="spacer"></span>
   <button mat-icon-button (click)="navigate(0)" class="icon favorite-icon">
     <mat-icon >home</mat-icon>
@@ -16,19 +16,19 @@
     <!--SECCIONES-->
     <div class="dflex">
       <button color="accent" (click)="navigate(1)" class="my-10" mat-raised-button>
-        Formulario de Registro
+        Registro Alumno
       </button>
       <button color="accent" (click)="navigate(2)" class="my-10" mat-raised-button>
         Listado de Alumnos
       </button>
       <button color="accent" (click)="navigate(3)" class="my-10" mat-raised-button>
-        Cursos
-      </button>
-      <button color="accent" (click)="navigate(4)" class="my-10" mat-raised-button>
         Asistencia
       </button>
+      <button color="accent" (click)="navigate(4)" class="my-10" mat-raised-button>
+        Cursos
+      </button>
       <button color="accent" disabled class="my-10" mat-raised-button>
-        Acciones
+        Inscripción
       </button>
       <button color="accent" disabled class="my-10" mat-raised-button>
         Configuración

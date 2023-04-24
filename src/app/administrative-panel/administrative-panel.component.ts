@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FullNamePipe } from '../shared/pipes/full-name.pipe';
 
 @Component({
@@ -9,22 +9,29 @@ import { FullNamePipe } from '../shared/pipes/full-name.pipe';
 })
 export class AdministrativePanelComponent {
   showFiller = false;
+  name: string = "";
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.name = params['name'];
+    });
+  }
 
   navigate(value:number) {
     switch (value) {
       case 1:
-        this.router.navigate(['/form']);
+        this.router.navigate(['/form'], {queryParams: {name: "Formulario de Registro de Alumno"}});
         break;
       case 2:
-        this.router.navigate(['/students']);
+        this.router.navigate(['/students'], {queryParams: {name: "Lista de Alumnos"}});
         break;
       case 3:
-        this.router.navigate(['/course']);
+        this.router.navigate(['/attendance'], {queryParams: {name: "Asistencia de Alumnos"}});
         break;
       case 4:
-        this.router.navigate(['/attendance']);
+        this.router.navigate(['/course'], {queryParams: {name: "Cursos"}});
         break;
       default:
         this.router.navigate(['/'])

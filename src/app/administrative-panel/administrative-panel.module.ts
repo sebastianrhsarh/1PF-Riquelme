@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from '../shared/shared.module';
 import { PipesModule } from '../shared/pipes/pipes.module';
 import { AttendanceComponent } from '../pages/attendance/attendance.component';
+import { CourseComponent } from '../pages/course/course.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AttendanceComponent } from '../pages/attendance/attendance.component';
     StudentsComponent,
     FormComponent,
     EditStudentComponent,
+    CourseComponent,
     AttendanceComponent
   ],
   imports: [

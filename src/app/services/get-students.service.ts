@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, interval, take } from 'rxjs';
+import { BehaviorSubject, Observable, interval, of, take } from 'rxjs';
 import { ELEMENT_DATA } from '../constants/constant';
 import { formatStudent } from '../interface/students';
 

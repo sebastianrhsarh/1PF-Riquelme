@@ -21,6 +21,9 @@ export class AdministrativePanelComponent {
         this.router.navigate(['/students']);
         break;
       case 3:
+        this.router.navigate(['/course']);
+        break;
+      case 4:
         this.router.navigate(['/attendance']);
         break;
       default:

@@ -6,6 +6,7 @@ import { FormComponent } from './pages/form/form.component';
 import { CourseComponent } from './pages/course/course.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AdministrativePanelComponent } from './administrative-panel/administrative-panel.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   {
     path: 'panel',
     component: AdministrativePanelComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'form', component: FormComponent },
       { path: 'students', component: StudentsComponent },

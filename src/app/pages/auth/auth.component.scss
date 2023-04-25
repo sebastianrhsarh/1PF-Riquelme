@@ -1,0 +1,28 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(48,48,48);
+}
+
+.form {
+  text-align: -webkit-center;
+  height: 100%;
+}
+
+form {
+  width: 500px !important;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}
+
+mat-card {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 25px;
+}
+
+.mat-mdc-card-content {
+  background-color: rgb(194,24,91);
+  border-radius: 5px;
+}

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="form">
+    <form (ngSubmit)="onSubmit()"
+    [formGroup]="registerForm"
+    class="container">
+      <mat-card>
+        <mat-card-content appFontSize>Inicio de sesión</mat-card-content>
+      </mat-card>
+      <mat-form-field appearance="fill" class="test">
+        <mat-label>Usuario</mat-label>
+        <input matInput [formControl]="userControl"
+        type="text"
+        placeholder="Mínimo 3 caracteres."
+        [ngClass]="{ 'form-invalid': this.userControl.invalid && this.userControl.touched }">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [formControl]="passControl"
+        type="text"
+        placeholder="Mínimo 3 caracteres."
+        [ngClass]="{ 'form-invalid': this.passControl.invalid && this.passControl.touched }">
+      </mat-form-field>
+      <button color="accent" type="submit" mat-raised-button>
+        Ir
+      </button>
+    </form>
+  </div>
+</div>

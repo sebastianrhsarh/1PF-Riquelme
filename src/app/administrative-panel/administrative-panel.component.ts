@@ -22,16 +22,16 @@ export class AdministrativePanelComponent {
   navigate(value:number) {
     switch (value) {
       case 1:
-        this.router.navigate(['/form'], {queryParams: {name: "Formulario de Registro de Alumno"}});
+        this.router.navigate(['/panel/form'], {queryParams: {name: "Formulario de Registro de Alumno"}});
         break;
       case 2:
-        this.router.navigate(['/students'], {queryParams: {name: "Lista de Alumnos"}});
+        this.router.navigate(['/panel/students'], {queryParams: {name: "Lista de Alumnos"}});
         break;
       case 3:
-        this.router.navigate(['/attendance'], {queryParams: {name: "Asistencia de Alumnos"}});
+        this.router.navigate(['/panel/attendance'], {queryParams: {name: "Asistencia de Alumnos"}});
         break;
       case 4:
-        this.router.navigate(['/course'], {queryParams: {name: "Cursos"}});
+        this.router.navigate(['/panel/course'], {queryParams: {name: "Cursos"}});
         break;
       default:
         this.router.navigate(['/'])

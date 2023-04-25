@@ -8,7 +8,8 @@ import { AuthComponent } from './pages/auth/auth.component';
 import { AdministrativePanelComponent } from './administrative-panel/administrative-panel.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/panel', pathMatch: 'full' },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  { path: 'auth', component: AuthComponent },
   {
     path: 'panel',
     component: AdministrativePanelComponent,
@@ -19,7 +20,7 @@ const routes: Routes = [
       { path: 'attendance', component: AttendanceComponent }
     ]
   },
-  { path: 'auth', component: AuthComponent },
+  { path: "**", pathMatch: "full", redirectTo: "auth"}
 ];
 
 @NgModule({

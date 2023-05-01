@@ -7,7 +7,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { StudentsComponent } from '../pages/students/students.component';
 import { MatTableModule } from '@angular/material/table';
-import { AppRoutingModule } from '../app-routing.module';
 import { FormComponent } from '../pages/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,6 +19,15 @@ import { SharedModule } from '../shared/shared.module';
 import { PipesModule } from '../shared/pipes/pipes.module';
 import { AttendanceComponent } from '../pages/attendance/attendance.component';
 import { CourseComponent } from '../pages/course/course.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
+
+const routes: Routes = [
+  { path: 'form', component: FormComponent },
+  { path: 'students', component: StudentsComponent },
+  { path: 'course', component: CourseComponent },
+  { path: 'attendance', component: AttendanceComponent }
+]
 
 @NgModule({
   declarations: [
@@ -32,6 +40,7 @@ import { CourseComponent } from '../pages/course/course.component';
   ],
   imports: [
     CommonModule,
+    // RouterModule.forChild(routes),
     SharedModule,
     MatSidenavModule,
     MatToolbarModule,
@@ -47,7 +56,6 @@ import { CourseComponent } from '../pages/course/course.component';
     AppRoutingModule
   ],
   exports: [
-    AdministrativePanelComponent,
     StudentsComponent,
     FormComponent,
     EditStudentComponent

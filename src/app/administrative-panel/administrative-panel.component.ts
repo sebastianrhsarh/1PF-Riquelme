@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FullNamePipe } from '../shared/pipes/full-name.pipe';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-administrative-panel',
@@ -11,7 +12,11 @@ export class AdministrativePanelComponent {
   showFiller = false;
   name: string = "";
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private serviceAuth: AuthService
+    ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -37,5 +42,9 @@ export class AdministrativePanelComponent {
         this.router.navigate(['/'])
         break;
     }
+  }
+
+  logout() {
+    this.serviceAuth.logout();
   }
 }

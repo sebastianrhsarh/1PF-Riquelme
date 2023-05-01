@@ -9,7 +9,6 @@ import { AdministrativePanelComponent } from './administrative-panel/administrat
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: 'auth', component: AuthComponent },
   {
     path: 'panel',
@@ -22,7 +21,14 @@ const routes: Routes = [
       { path: 'attendance', component: AttendanceComponent }
     ]
   },
-  { path: "**", pathMatch: "full", redirectTo: "auth"}
+  // {
+  //   path: 'panel',
+  //   component: AdministrativePanelComponent,
+  //   canActivate: [AuthGuard],
+  //   loadChildren: () => import('./administrative-panel/administrative-panel.module').then((m) => m.AdministrativePanelModule)
+  // },
+  { path: "**", pathMatch: "full", redirectTo: "auth"},
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
 ];
 
 @NgModule({

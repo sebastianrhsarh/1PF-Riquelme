@@ -16,11 +16,9 @@ import { MatCardModule } from '@angular/material/card';
 import { EditStudentComponent } from '../pages/edit-student/edit-student.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from '../shared/shared.module';
-import { PipesModule } from '../shared/pipes/pipes.module';
 import { AttendanceComponent } from '../pages/attendance/attendance.component';
 import { CourseComponent } from '../pages/course/course.component';
 import { RouterModule, Routes } from '@angular/router';
-import { AppRoutingModule } from '../app-routing.module';
 
 const routes: Routes = [
   { path: 'form', component: FormComponent },
@@ -40,7 +38,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    // RouterModule.forChild(routes),
+    RouterModule.forChild(routes),
     SharedModule,
     MatSidenavModule,
     MatToolbarModule,
@@ -53,7 +51,6 @@ const routes: Routes = [
     MatInputModule,
     MatCardModule,
     MatDialogModule,
-    AppRoutingModule
   ],
   exports: [
     StudentsComponent,

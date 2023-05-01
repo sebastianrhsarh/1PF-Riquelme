@@ -22,14 +22,14 @@ export class AuthComponent {
     ) {
 
     this.loginForm = this.formBuilder.group({
-      name: this.userControl,
-      lastName: this.passControl
+      user: this.userControl,
+      password: this.passControl
     });
   }
 
 
   onSubmit(): void {
-    if (this.loginForm.valid) {
+    if (this.loginForm.valid) {      
       this.authService.userLogged(this.loginForm.value as LoginFormValue)
     } else {
       alert('El formulario no es valido');

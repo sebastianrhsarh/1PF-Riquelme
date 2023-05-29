@@ -7,6 +7,10 @@
     {
       "user": "Luis",
       "pass": "Tutor"
+    },
+    {
+      "user": "Profesor",
+      "pass": "Josué"
     }
   ]
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FullNamePipe } from '../shared/pipes/full-name.pipe';
 import { AuthService } from '../services/auth.service';
+import { CurrentUserService } from '../services/current-user.service';
 
 @Component({
   selector: 'app-administrative-panel',
@@ -11,17 +12,20 @@ import { AuthService } from '../services/auth.service';
 export class AdministrativePanelComponent {
   showFiller = false;
   name: string = "";
+  role: string = ""
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private serviceAuth: AuthService
+    private serviceAuth: AuthService,
+    private currentUser: CurrentUserService
     ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.name = params['name'];
     });
+    this.role = this.currentUser.getCurrentUser();    
   }
 
   navigate(value:number) {

@@ -2,15 +2,18 @@
   "users": [
     {
       "user": "Sebastian",
-      "pass": "Alumno"
+      "pass": "Alumno",
+      "role": "user"
     },
     {
       "user": "Luis",
-      "pass": "Tutor"
+      "pass": "Tutor",
+      "role": "admin"
     },
     {
       "user": "Profesor",
-      "pass": "Josué"
+      "pass": "Josué",
+      "role": "admin"
     }
   ]
 }

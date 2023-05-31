@@ -30,8 +30,8 @@
       <button color="accent" disabled class="my-10" mat-raised-button>
         Inscripción
       </button>
-      <button color="accent" disabled class="my-10" mat-raised-button>
-        Configuración
+      <button *ngIf="role == 'admin'" color="accent" disabled class="my-10" mat-raised-button>
+        Usuarios
       </button>
     </div>
   </mat-drawer>

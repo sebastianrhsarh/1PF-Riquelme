@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ELEMENT_DATA } from 'src/app/constants/constant';
 import { EditStudentComponent } from '../edit-student/edit-student.component';
+import { CurrentUserService } from 'src/app/services/current-user.service';
 
 @Component({
   selector: 'app-students',
@@ -12,7 +13,9 @@ export class StudentsComponent {
   displayedColumns: string[] = ['name', 'status', 'edit', 'delete'];
   dataSource = ELEMENT_DATA;
 
-  constructor(private dialogService: MatDialog) {}
+  constructor(
+    private dialogService: MatDialog,
+    ) {}
   
   delete(element: any) {
     const index = this.dataSource.indexOf(element);

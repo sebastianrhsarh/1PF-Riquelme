@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { formatCourse } from 'src/app/interface/course';
+import { CurrentUserService } from 'src/app/services/current-user.service';
 import { GetCourseService } from 'src/app/services/get-course.service';
 
 @Component({
@@ -8,14 +9,17 @@ import { GetCourseService } from 'src/app/services/get-course.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent {
-  dataSource: formatCourse[] = [];
-  displayedColumns: string[] = ['id', 'name'];
-  constructor(private courseService: GetCourseService) {}
+  dataSource: any[] = [];
+  displayedColumns: string[] = ['role', 'name'];
+  constructor(
+    private userService: CurrentUserService
+    ) {}
 
   ngOnInit(): void {
-    this.courseService.getCourses().subscribe(data => {
+    this.userService.getUsers().subscribe(data => {
       this.dataSource = data;
-    });
+    })
+    
   }
 
 

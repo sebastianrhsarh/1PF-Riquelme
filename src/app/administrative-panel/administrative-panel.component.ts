@@ -42,6 +42,9 @@ export class AdministrativePanelComponent {
       case 4:
         this.router.navigate(['/panel/course'], {queryParams: {name: "Cursos"}});
         break;
+      case 5:
+        this.router.navigate(['/panel/users'], {queryParams: {name: "Usuarios"}});
+        break;
       default:
         this.router.navigate(['/'])
         break;

@@ -16,7 +16,7 @@
     <!--SECCIONES-->
     <div class="dflex">
       <button color="accent" (click)="navigate(1)" class="my-10" mat-raised-button>
-        Registro Alumno
+        Inscripción Alumno
       </button>
       <button color="accent" (click)="navigate(2)" class="my-10" mat-raised-button>
         Listado de Alumnos
@@ -27,10 +27,7 @@
       <button color="accent" (click)="navigate(4)" class="my-10" mat-raised-button>
         Cursos
       </button>
-      <button color="accent" disabled class="my-10" mat-raised-button>
-        Inscripción
-      </button>
-      <button *ngIf="role == 'admin'" color="accent" disabled class="my-10" mat-raised-button>
+      <button (click)="navigate(5)" *ngIf="role == 'admin'" color="accent" class="my-10" mat-raised-button>
         Usuarios
       </button>
     </div>

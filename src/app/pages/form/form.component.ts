@@ -33,7 +33,7 @@ export class FormComponent {
       }
       ELEMENT_DATA.push(newFormat);
       alert('Estudiante registrado correctamente');
-      this.router.navigate(['/students']);
+      this.router.navigate(['panel/students']);
     } else {
       alert('El formulario no es valido');
     }

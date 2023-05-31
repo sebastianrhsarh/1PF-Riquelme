@@ -19,12 +19,14 @@ import { SharedModule } from '../shared/shared.module';
 import { AttendanceComponent } from '../pages/attendance/attendance.component';
 import { CourseComponent } from '../pages/course/course.component';
 import { RouterModule, Routes } from '@angular/router';
+import { UsersComponent } from '../pages/users/users.component';
 
 const routes: Routes = [
   { path: 'form', component: FormComponent },
   { path: 'students', component: StudentsComponent },
   { path: 'course', component: CourseComponent },
-  { path: 'attendance', component: AttendanceComponent }
+  { path: 'attendance', component: AttendanceComponent },
+  { path: 'users', component: UsersComponent }
 ]
 
 @NgModule({
@@ -34,7 +36,8 @@ const routes: Routes = [
     FormComponent,
     EditStudentComponent,
     CourseComponent,
-    AttendanceComponent
+    AttendanceComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,

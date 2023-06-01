@@ -6,6 +6,10 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environments';
 import { CurrentUserService } from './current-user.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '../store';
+import { establishUserAuth, removeUserAuth } from '../store/auth/auth.actions';
+import { selectAuthUser } from '../store/auth/auth.selectors';
 
 export interface LoginFormValue {
   user: string;
@@ -22,21 +26,25 @@ export class AuthService {
   constructor(
     private router: Router,
     private httpClient: HttpClient,
-    private currentUser: CurrentUserService
+    private currentUser: CurrentUserService,
+    private store: Store<AppState>
     ) { }
 
   userAuth(): Observable<FormatUser | null> {
-    return this.auth$.asObservable();
+    return this.store.select(selectAuthUser);
+  }
+
+  establishUser(user: any): void {
+    this.store.dispatch(establishUserAuth({payload: user}));
   }
 
   userLogged(formValue: LoginFormValue) {
     this.httpClient.get<FormatUser[]>(`${environment.apiBaseUrl}/users?user=${formValue.user}&pass=${formValue.password}`).subscribe({
       next:(user) => {
         const userAuth = user[0];
-        if(userAuth) {
-          console.log("userAuth",userAuth);
-          
+        if(userAuth) {          
           localStorage.setItem('auth-user', JSON.stringify(user));
+          this.establishUser(userAuth);
           this.auth$.next(userAuth);
           this.router.navigate(['panel', 'students']);
         }
@@ -46,7 +54,7 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('auth-user');
-    this.auth$.next(null);
+    this.store.dispatch(removeUserAuth())
     this.router.navigate(['auth']);
   }
 
@@ -59,8 +67,7 @@ export class AuthService {
     }
     
     if (storageValor) {      
-      const usuario = JSON.parse(storageValor);
-      this.auth$.next(usuario);
+      this.store.select(selectAuthUser);
     }
   }
 }

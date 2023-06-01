@@ -1,18 +1,27 @@
 {
   "users": [
     {
+      "id": "1",
       "user": "Sebastian",
+      "name": "Sebastián",
+      "lastname": "Riquelme",
       "pass": "Alumno",
       "role": "user"
     },
     {
+      "id": "2",
       "user": "Luis",
+      "name": "Luis",
+      "lastname": "Salinas",
       "pass": "Tutor",
       "role": "admin"
     },
     {
-      "user": "Profesor",
-      "pass": "Josué",
+      "id": "3",
+      "user": "Josue",
+      "name": "Josué",
+      "lastname": "Báez",
+      "pass": "Josue",
       "role": "admin"
     }
   ]

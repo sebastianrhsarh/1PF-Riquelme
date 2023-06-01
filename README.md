@@ -1,7 +1,7 @@
 Para poder acceder al proyecto realizado te cree una cuenta:
 {
-  "user": "Profesor",
-  "pass": "Josué"
+  "user": "Josue",
+  "pass": "profesor"
 }
 
 Primero se levanta nuestra base de datos local con el comando "json-serve --watch database/db.json"
